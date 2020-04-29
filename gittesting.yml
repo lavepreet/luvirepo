@@ -1,0 +1,10 @@
+---
+- hosts: new
+  become: true
+  tasks:
+    - name: display output of df -h /
+      command: df -h 
+      register: out
+    - debug::
+        var: out
+
